@@ -23,20 +23,69 @@ document.addEventListener('DOMContentLoaded', () => {
   let scrollAmount = 0;
   const slideWidth = 260;
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      scrollAmount += slideWidth;
-      slider.style.transform = `translateX(-${scrollAmount}px)`;
-    });
-  }
+  if (nextBtn && slider) {
+  nextBtn.addEventListener('click', () => {
+    const maxScroll = slider.scrollWidth - slider.parentElement.offsetWidth;
+    scrollAmount += slideWidth;
+    if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+    slider.style.transform = `translateX(-${scrollAmount}px)`;
+  });
+}
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      scrollAmount -= slideWidth;
+if (prevBtn && slider) {
+  prevBtn.addEventListener('click', () => {
+    scrollAmount -= slideWidth;
+    if (scrollAmount < 0) scrollAmount = 0;
+    slider.style.transform = `translateX(-${scrollAmount}px)`;
+  });
+}
+
+/* =========================
+   TOUCH / SWIPE SUPPORT
+   ========================= */
+
+let startX = 0;
+let endX = 0;
+
+if (slider) {
+  slider.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  slider.addEventListener('touchmove', (e) => {
+    endX = e.touches[0].clientX;
+  }, { passive: true });
+
+  slider.addEventListener('touchend', () => {
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+      scrollAmount += diff > 0 ? slideWidth : -slideWidth;
+
       if (scrollAmount < 0) scrollAmount = 0;
+      const maxScroll = slider.scrollWidth - slider.parentElement.offsetWidth;
+      if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+
       slider.style.transform = `translateX(-${scrollAmount}px)`;
-    });
-  }
+    }
+  });
+}
+
+
+//   if (nextBtn) {
+//     nextBtn.addEventListener('click', () => {
+//       scrollAmount += slideWidth;
+//       slider.style.transform = `translateX(-${scrollAmount}px)`;
+//     });
+//   }
+
+//   if (prevBtn) {
+//     prevBtn.addEventListener('click', () => {
+//       scrollAmount -= slideWidth;
+//       if (scrollAmount < 0) scrollAmount = 0;
+//       slider.style.transform = `translateX(-${scrollAmount}px)`;
+//     });
+//   }
 
   // Image modal
   const modal = document.getElementById('imageModal');

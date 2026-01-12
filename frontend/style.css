@@ -93,11 +93,11 @@ body {
 }
 
 .work-slider {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.4s ease;
-  will-change: transform;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
+
 
 .work-slider img {
   width: 260px;
