@@ -1,119 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Custom Dress Boutique</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- HEADER / BRAND -->
-    <header class="brand-header">
-      <div class="brand-container">
-        <span class="brand-name-text">Elegance by Moni</span>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>Elegance by Moni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="hero-content">
-        <!-- LOGO ON LEFT -->
-        <img
-          src="assets/logo.png"
-          alt="Elegance by Moni Logo"
-          class="hero-logo"
-        />
+  <link rel="stylesheet" href="style.css" />
 
-        <!-- TEXT ON RIGHT -->
-        <div class="hero-text">
-          <h1>Custom-Stitched Dresses for Every Occasion</h1>
-          <p>Designed & stitched exclusively for you</p>
-          <div class="cta-wrapper">
-            <button id="openFormBtn">Customize Your Dress</button>
-            <span class="cta-arrow" id="openFormText">➜</span>
-          </div>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+
+<body>
+
+  <!-- BRAND HEADER -->
+  <header class="brand-header">
+    <div class="brand-container">
+      <div class="brand-name-text">Elegance by Moni</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+
+      <img src="assets/logo.png" alt="Elegance by Moni Logo" class="hero-logo" />
+
+      <div class="hero-text">
+        <h1>Custom-Stitched Dresses for Every Occasion</h1>
+        <p>Designed exclusively for you with elegance and precision.</p>
+
+        <div class="cta-wrapper">
+          <button id="openFormBtn">Customize Your Dress</button>
+          <span class="cta-arrow" id="openFormText">➜</span>
         </div>
       </div>
-    </section>
-    <!-- PREVIOUS WORK SHOWCASE -->
-    <section class="work-showcase">
-      <div class="work-container">
-        <button class="arrow left" id="prevWork">&#10094;</button>
 
-        <div class="work-slider" id="workSlider">
-          <img src="assets/work/work1.jpg" />
-          <img src="assets/work/work2.jpg" />
-          <img src="assets/work/work3.jpg" />
-          <img src="assets/work/work4.jpg" />
-          <img src="assets/work/work5.jpg" />
-          <img src="assets/work/work6.jpg" />
-          <img src="assets/work/work7.jpg" />
-        </div>
+    </div>
+  </section>
 
-        <button class="arrow right" id="nextWork">&#10095;</button>
+  <!-- WORK SHOWCASE -->
+  <section class="work-showcase">
+    <div class="work-container">
+      <button class="arrow left" id="prevWork">&#10094;</button>
+      <button class="arrow right" id="nextWork">&#10095;</button>
+
+      <div class="work-slider" id="workSlider">
+        <img src="assets/work/work1.jpg" alt="Work 1" />
+        <img src="assets/work/work2.jpg" alt="Work 2" />
+        <img src="assets/work/work3.jpg" alt="Work 3" />
+        <img src="assets/work/work4.jpg" alt="Work 4" />
+        <img src="assets/work/work5.jpg" alt="Work 5" />
+        <img src="assets/work/work6.jpg" alt="Work 6" />
+        <img src="assets/work/work7.jpg" alt="Work 7" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ORDER FORM SECTION -->
-    <section class="form-section hidden" id="formSection">
-      <h2>Place Your Order</h2>
-      <p class="form-info">
-        Fill in your details and we’ll reach out to you soon to begin your
-        custom stitching journey.
-      </p>
+  <!-- ORDER FORM -->
+  <section class="form-section hidden" id="formSection">
+    <h2>Place Your Order</h2>
 
-      <form id="orderForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="text" id="phone" placeholder="Phone Number" required />
-        <input
-          type="text"
-          id="location"
-          placeholder="City / Location"
-          required
-        />
+    <p class="form-info">
+      Please share your details by placing an order.
+      Our team will connect with you shortly to discuss measurements,
+      design preferences, and fabric options.
+    </p>
 
-        <select id="dressType" required>
-          <option value="">Select Dress Type</option>
-          <option>Blouse</option>
-          <option>Kurti</option>
-          <option>Anarkali Suits</option>
-          <option>One Piece Frock / Dresses</option>
-          <option>Sharara Suits</option>
-          <option>Palazzo Set</option>
-          <option>Gown</option>
-          <option>Lehenga</option>
-          <option>Saree Blouse</option>
-        </select>
+    <form id="orderForm">
 
-        <select id="fabricOption" required>
-          <option value="">Fabric Option</option>
-          <option>Customer Provides</option>
-          <option>Designer Provides</option>
-        </select>
+      <input id="name" type="text" placeholder="Your Name" required />
+      <input id="phone" type="tel" placeholder="Phone Number" required />
+      <input id="location" type="text" placeholder="Your Location" required />
 
-        <textarea id="notes" placeholder="Additional Notes"></textarea>
+      <select id="dressType" required>
+        <option value="">Select Dress Type</option>
+        <option value="Anarkali Suits">Anarkali Suits</option>
+        <option value="One Piece Frock / Dresses">One Piece Frock / Dresses</option>
+        <option value="Sharara Suits">Sharara Suits</option>
+        <option value="Palazzo Set">Palazzo Set</option>
+        <option value="Lehenga">Lehenga</option>
+        <option value="Gown">Gown</option>
+        <option value="Blouse">Blouse</option>
+        <option value="Saree Fall / Alteration">Saree Fall / Alteration</option>
+      </select>
 
-        <button type="submit">Place Order</button>
-      </form>
+      <select id="fabricOption" name="fabricOption" required>
+  <option value="">Fabric Option</option>
+  <option value="Customer Provides">Customer Provides</option>
+  <option value="Designer Provides">Designer Provides</option>
+</select>
 
-      <p id="message"></p>
-    </section>
+      <textarea
+        id="notes"
+        placeholder="Any special requirements (optional)"
+      ></textarea>
 
-    <script src="script.js"></script>
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <a
-      href="https://wa.me/919981135321"
-      class="whatsapp-float"
-      target="_blank"
-      title="Chat with us on WhatsApp"
-    >
-      💬
-    </a>
+      <button type="submit">Place Order</button>
+    </form>
 
-    <!-- IMAGE PREVIEW MODAL -->
-<div class="image-modal hidden" id="imageModal">
-  <span class="close-modal" id="closeModal">&times;</span>
-  <img id="modalImage" />
-</div>
+    <p id="message"></p>
+  </section>
 
-  </body>
+  <!-- IMAGE MODAL -->
+  <div class="image-modal hidden" id="imageModal">
+    <span class="close-modal" id="closeModal">&times;</span>
+    <img id="modalImage" alt="Preview" />
+  </div>
+
+  <!-- WHATSAPP -->
+  <a
+    href="https://wa.me/919981135321"
+    class="whatsapp-float"
+    target="_blank"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
 </html>
