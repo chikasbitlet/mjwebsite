@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Custom Dress Boutique</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER / BRAND -->
+    <header class="brand-header">
+      <div class="brand-container">
+        <span class="brand-name-text">Elegance by Moni</span>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <!-- LOGO ON LEFT -->
+        <img
+          src="assets/logo.png"
+          alt="Elegance by Moni Logo"
+          class="hero-logo"
+        />
+
+        <!-- TEXT ON RIGHT -->
+        <div class="hero-text">
+          <h1>Custom-Stitched Dresses for Every Occasion</h1>
+          <p>Designed & stitched exclusively for you</p>
+          <div class="cta-wrapper">
+            <button id="openFormBtn">Customize Your Dress</button>
+            <span class="cta-arrow" id="openFormText">➜</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PREVIOUS WORK SHOWCASE -->
+    <section class="work-showcase">
+      <div class="work-container">
+        <button class="arrow left" id="prevWork">&#10094;</button>
+
+        <div class="work-slider" id="workSlider">
+          <img src="assets/work/work1.jpg" />
+          <img src="assets/work/work2.jpg" />
+          <img src="assets/work/work3.jpg" />
+          <img src="assets/work/work4.jpg" />
+          <img src="assets/work/work5.jpg" />
+          <img src="assets/work/work6.jpg" />
+          <img src="assets/work/work7.jpg" />
+        </div>
+
+        <button class="arrow right" id="nextWork">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- ORDER FORM SECTION -->
+    <section class="form-section hidden" id="formSection">
+      <h2>Place Your Order</h2>
+      <p class="form-info">
+        Fill in your details and we’ll reach out to you soon to begin your
+        custom stitching journey.
+      </p>
+
+      <form id="orderForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="phone" placeholder="Phone Number" required />
+        <input
+          type="text"
+          id="location"
+          placeholder="City / Location"
+          required
+        />
+
+        <select id="dressType" required>
+          <option value="">Select Dress Type</option>
+          <option>Blouse</option>
+          <option>Kurti</option>
+          <option>Anarkali Suits</option>
+          <option>One Piece Frock / Dresses</option>
+          <option>Sharara Suits</option>
+          <option>Palazzo Set</option>
+          <option>Gown</option>
+          <option>Lehenga</option>
+          <option>Saree Blouse</option>
+        </select>
+
+        <select id="fabricOption" required>
+          <option value="">Fabric Option</option>
+          <option>Customer Provides</option>
+          <option>Designer Provides</option>
+        </select>
+
+        <textarea id="notes" placeholder="Additional Notes"></textarea>
+
+        <button type="submit">Place Order</button>
+      </form>
+
+      <p id="message"></p>
+    </section>
+
+    <script src="script.js"></script>
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a
+      href="https://wa.me/919981135321"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+    >
+      💬
+    </a>
+
+    <!-- IMAGE PREVIEW MODAL -->
+<div class="image-modal hidden" id="imageModal">
+  <span class="close-modal" id="closeModal">&times;</span>
+  <img id="modalImage" />
+</div>
+
+  </body>
+</html>
