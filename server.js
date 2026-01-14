@@ -1,3 +1,4 @@
+console.log("DB_NAME:", process.env.DB_NAME);
 const express = require("express");
 require("dotenv").config();
 
