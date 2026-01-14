@@ -1,34 +1,25 @@
 const sendEmail = require('../utils/sendEmail');
-const Order = require('../models/Order');
+// const Order = require('../models/Order');
 
 exports.createOrder = async (req, res) => {
-  try {
-    const { name, phone, location, dressType, fabricOption, notes } = req.body;
+  return res.status(200).json({
+    message: 'Order API is alive (MySQL migration in progress)',
+    payload: req.body
+  });
+};
 
-    if (!name || !phone || !location || !dressType || !fabricOption) {
-      return res.status(400).json({ message: 'Missing required fields' });
-    }
-
-    const order = await Order.create({
-      name,
-      phone,
-      location,
-      dressType,
-      fabricOption,
-      notes
-    });
 
     // Send email notification
-await sendEmail(order);
+// await sendEmail(order);
 
-    res.status(201).json({
-      message: 'Order placed successfully',
-      order
-    });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+//     res.status(201).json({
+//       message: 'Order placed successfully',
+//       order
+//     });
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 exports.getOrders = async (req, res) => {
   try {
